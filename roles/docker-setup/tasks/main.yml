@@ -1,0 +1,11 @@
+---
+# tasks file for ./docker-setup
+- name: Docker installation
+  ansible.builtin.import_tasks:
+    file: install.yml
+  tags: docker-install
+
+- name: Docker installation
+  ansible.builtin.import_tasks:
+    file: config.yml
+  tags: docker-config

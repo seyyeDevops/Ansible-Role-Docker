@@ -1,0 +1,13 @@
+---
+
+- name: Ensures /etc/docker/daemon.json dir exists
+  ansible.builtin.file:
+    path: "/etc/docker"
+    state: directory
+    mode: '0644'
+
+- name: Set docker config in /etc/docker/daemon.json
+  ansible.builtin.template:
+    src: "daemon.j2"
+    dest: "/etc/docker/daemon.json"
+    mode: '0644'
